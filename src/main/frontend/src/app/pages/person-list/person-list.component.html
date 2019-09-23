@@ -1,0 +1,9 @@
+<button (click)="initPersons()">
+  Load persons
+</button>
+<h3>Persons: </h3>
+<ul>
+  <li *ngFor="let person of persons">
+    {{person.name}} ({{person.id}})
+  </li>
+</ul>
