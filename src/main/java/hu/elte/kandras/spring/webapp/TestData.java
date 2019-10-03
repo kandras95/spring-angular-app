@@ -1,7 +1,9 @@
 package hu.elte.kandras.spring.webapp;
 
 import hu.elte.kandras.spring.webapp.model.Person;
+import hu.elte.kandras.spring.webapp.model.Subject;
 import hu.elte.kandras.spring.webapp.service.PersonService;
+import hu.elte.kandras.spring.webapp.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,13 +14,21 @@ public class TestData {
 
     private final PersonService personService;
 
+    private final SubjectService subjectService;
+
     @Autowired
-    public TestData(PersonService personService) {
+    public TestData(PersonService personService, SubjectService subjectService) {
         this.personService = personService;
+        this.subjectService = subjectService;
     }
 
     @PostConstruct
     public void initTestData() {
+        InitPersons();
+        InitSubjects();
+    }
+
+    private void InitPersons() {
         Person person1 = new Person();
         person1.setName("Person 1");
         personService.save(person1);
@@ -30,5 +40,25 @@ public class TestData {
         Person person3 = new Person();
         person3.setName("Person 3");
         personService.save(person3);
+    }
+
+    private void InitSubjects() {
+        Subject subject1 = new Subject();
+        subject1.setName("Subject1");
+        subject1.setCode("sub001");
+        subject1.setDescription("Discription of Subject1");
+        subjectService.save(subject1);
+
+        Subject subject2 = new Subject();
+        subject2.setName("Subject2");
+        subject2.setCode("sub002");
+        subject2.setDescription("Discription of Subject2");
+        subjectService.save(subject2);
+
+        Subject subject3 = new Subject();
+        subject3.setName("Subject3");
+        subject3.setCode("sub003");
+        subject3.setDescription("Discription of Subject3");
+        subjectService.save(subject3);
     }
 }
