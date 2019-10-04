@@ -1,6 +1,7 @@
 package hu.elte.kandras.spring.webapp.web;
 
 import hu.elte.kandras.spring.webapp.model.Person;
+import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import hu.elte.kandras.spring.webapp.service.PersonService;
 import hu.elte.kandras.spring.webapp.service.PersonServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,12 @@ public class PersonController {
     }
 
     @GetMapping("/persons")
-    public List<Person> persons() {
-        return personService.findAll();
+    public List<Person> persons(@RequestParam(value = "role", defaultValue = "") PersonRole role) {
+        if (role == null) {
+            return personService.findAll();
+        } else {
+            return personService.findAllByRole(role);
+        }
     }
 
     @GetMapping("persons/{id}")

@@ -1,6 +1,7 @@
 package hu.elte.kandras.spring.webapp.service;
 
 import hu.elte.kandras.spring.webapp.model.Person;
+import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import hu.elte.kandras.spring.webapp.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,5 +39,10 @@ public class PersonServiceImpl implements PersonService {
         if (person != null) {
             personRepositorySpring.delete(person);
         }
+    }
+
+    @Override
+    public List<Person> findAllByRole(PersonRole role) {
+        return personRepositorySpring.findAllByRole(role);
     }
 }

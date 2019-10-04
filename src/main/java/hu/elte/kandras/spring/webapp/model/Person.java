@@ -1,5 +1,6 @@
 package hu.elte.kandras.spring.webapp.model;
 
+import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -16,4 +17,6 @@ public class Person {
     private Integer id;
 
     private String name;
+
+    private PersonRole role;
 }

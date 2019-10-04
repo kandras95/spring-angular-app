@@ -2,6 +2,7 @@ package hu.elte.kandras.spring.webapp;
 
 import hu.elte.kandras.spring.webapp.model.Person;
 import hu.elte.kandras.spring.webapp.model.Subject;
+import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import hu.elte.kandras.spring.webapp.service.PersonService;
 import hu.elte.kandras.spring.webapp.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,25 +25,28 @@ public class TestData {
 
     @PostConstruct
     public void initTestData() {
-        InitPersons();
-        InitSubjects();
+        initPersons();
+        initSubjects();
     }
 
-    private void InitPersons() {
+    private void initPersons() {
         Person person1 = new Person();
         person1.setName("Person 1");
+        person1.setRole(PersonRole.STUDENT);
         personService.save(person1);
 
         Person person2 = new Person();
         person2.setName("Person 2");
+        person2.setRole(PersonRole.STUDENT);
         personService.save(person2);
 
         Person person3 = new Person();
         person3.setName("Person 3");
+        person3.setRole(PersonRole.INSTRUCTOR);
         personService.save(person3);
     }
 
-    private void InitSubjects() {
+    private void initSubjects() {
         Subject subject1 = new Subject();
         subject1.setName("Subject1");
         subject1.setCode("sub001");
