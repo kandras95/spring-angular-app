@@ -1,5 +1,6 @@
 package hu.elte.kandras.spring.webapp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import lombok.Data;
 
@@ -21,5 +22,6 @@ public class Person {
 
     @ManyToMany
     @JoinTable
+    @JsonBackReference
     private List<Subject> subjectList;
 }
