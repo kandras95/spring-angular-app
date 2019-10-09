@@ -2,13 +2,13 @@ package hu.elte.kandras.spring.webapp.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
+@Table(name = "Subject")
 public class Subject {
 
     @Id
@@ -20,4 +20,11 @@ public class Subject {
     private String code;
 
     private String description;
+
+    @ManyToMany(mappedBy = "subjectList")
+    private List<Person> personList = new ArrayList<>();
+
+    @ManyToOne(targetEntity = University.class, optional = false)
+    @JoinColumn
+    private University university;
 }

@@ -3,13 +3,12 @@ package hu.elte.kandras.spring.webapp.model;
 import hu.elte.kandras.spring.webapp.model.enums.PersonRole;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
+@Table(name = "Person")
 public class Person {
 
     @Id
@@ -19,4 +18,8 @@ public class Person {
     private String name;
 
     private PersonRole role;
+
+    @ManyToMany
+    @JoinTable
+    private List<Subject> subjectList;
 }
