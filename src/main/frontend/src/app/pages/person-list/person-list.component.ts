@@ -15,6 +15,7 @@ export class PersonListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initPersons();
   }
 
   initPersons() {
