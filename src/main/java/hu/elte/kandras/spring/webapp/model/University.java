@@ -1,5 +1,6 @@
 package hu.elte.kandras.spring.webapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,5 +20,6 @@ public class University {
     private Integer popularity;
 
     @OneToMany(targetEntity = Subject.class, mappedBy = "university")
+    @JsonIgnore
     private List<Subject> subjects;
 }

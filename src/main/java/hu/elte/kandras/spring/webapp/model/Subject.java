@@ -1,6 +1,6 @@
 package hu.elte.kandras.spring.webapp.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -23,7 +23,7 @@ public class Subject {
     private String description;
 
     @ManyToMany(mappedBy = "subjectList")
-    @JsonManagedReference
+    @JsonIgnore
     private List<Person> personList = new ArrayList<>();
 
     @ManyToOne(targetEntity = University.class, optional = false)
