@@ -11,6 +11,6 @@ export class PersonService {
   }
 
   getPersons() {
-    return this.httpClient.get<Person[]>(PERSON_API);
+    return this.httpClient.get<Person[]>(PERSON_API, {withCredentials: true});
   }
 }

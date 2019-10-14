@@ -5,12 +5,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li routerLinkActive="active" class="nav-item active">
-        <a [routerLink]="['']" class="nav-link" href="#">Home</a>
+    <ul class="navbar-nav mr-auto">
+      <li routerLinkActive="active" class="nav-item">
+        <a [routerLink]="['/home']" class="nav-link" *ngIf="authService.isUserLoggedIn()">Home</a>
       </li>
       <li routerLinkActive="active" class="nav-item">
-        <a [routerLink]="['/persons']" class="nav-link" href="#">Persons</a>
+        <a [routerLink]="['/persons']" class="nav-link" *ngIf="authService.isUserLoggedIn()">Persons</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li routerLinkActive="active" class="nav-item">
+        <a [routerLink]="['/login']" class="nav-link" *ngIf="!authService.isUserLoggedIn()">
+          Login
+        </a>
+      </li>
+      <li routerLinkActive="active" class="nav-item">
+        <a class="nav-link" href="#"
+           (click)="logout()"
+           *ngIf="authService.isUserLoggedIn()">
+          Logout
+        </a>
       </li>
     </ul>
   </div>
