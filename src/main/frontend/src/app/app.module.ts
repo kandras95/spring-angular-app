@@ -12,12 +12,15 @@ import {AuthService} from "./service/auth/auth.service";
 import {LoggedInGuard} from "./service/auth/logged-in-guard.service";
 import {LoginComponent} from "./component/login/login.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {SubjectListComponent} from './pages/subject-list/subject-list.component';
+import {SubjectService} from "./service/subject.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     PersonListComponent,
+    SubjectListComponent,
     HeaderComponent,
     HomeComponent
   ],
@@ -30,6 +33,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   ],
   providers: [
     PersonService,
+    SubjectService,
     AuthService,
     LoggedInGuard
   ],

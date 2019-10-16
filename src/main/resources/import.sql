@@ -11,4 +11,4 @@ insert into subject (name, code, description, university_id) values ('Analízis 
 insert into subject (name, code, description, university_id) values ('Analízis 6.', 'BME01', 'Modellezés',2);
 insert into subject (name, code, description, university_id) values ('Tenisz', 'TF01', 'Kezdő tenisz',3);
 
-insert into person_subject_list (person_list_id, subject_list_id) values (1, 1);
+insert into person_subjects (persons_id, subjects_id) values (1, 1);

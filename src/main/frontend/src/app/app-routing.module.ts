@@ -4,6 +4,7 @@ import {HomeComponent} from "./component/home/home.component";
 import {PersonListComponent} from "./pages/person-list/person-list.component";
 import {LoginComponent} from "./component/login/login.component";
 import {LoggedInGuard} from "./service/auth/logged-in-guard.service";
+import {SubjectListComponent} from "./pages/subject-list/subject-list.component";
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'persons', component: PersonListComponent,
+    canActivate: [LoggedInGuard]
+  },
+  {
+    path: 'subjects', component: SubjectListComponent,
     canActivate: [LoggedInGuard]
   },
   {

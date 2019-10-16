@@ -1,6 +1,6 @@
 export class Subject {
   id: string;
   name: string;
-  role: string;
-
+  code: string;
+  description: string;
 }
