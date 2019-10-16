@@ -22,9 +22,9 @@ public class Subject {
 
     private String description;
 
-    @ManyToMany(mappedBy = "subjectList")
+    @ManyToMany(mappedBy = "subjects")
     @JsonIgnore
-    private List<Person> personList = new ArrayList<>();
+    private List<Person> persons = new ArrayList<>();
 
     @ManyToOne(targetEntity = University.class, optional = false)
     @JoinColumn

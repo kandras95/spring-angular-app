@@ -21,5 +21,5 @@ public class Person {
 
     @ManyToMany
     @JoinTable
-    private List<Subject> subjectList;
+    private List<Subject> subjects;
 }
