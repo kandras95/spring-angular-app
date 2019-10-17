@@ -29,4 +29,8 @@ public class Subject {
     @ManyToOne(targetEntity = University.class, optional = false)
     @JoinColumn
     private University university;
+
+    public int getPersonSize() {
+        return persons.size();
+    }
 }

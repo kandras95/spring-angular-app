@@ -3,4 +3,5 @@ export class Subject {
   name: string;
   code: string;
   description: string;
+  personSize: number;
 }

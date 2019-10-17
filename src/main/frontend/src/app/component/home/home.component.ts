@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth/auth.service";
+import {Subject} from "../../model/subject.model";
+import {PersonService} from "../../service/person.service";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,8 @@ import {AuthService} from "../../service/auth/auth.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public authService: AuthService) {
+  constructor(public authService: AuthService,
+              private personService: PersonService) {
   }
 
   ngOnInit() {
@@ -33,6 +36,29 @@ export class HomeComponent implements OnInit {
       return user.person.subjects;
     } else {
       return [];
+    }
+  }
+
+  removeSubjectFromPerson(subjectToRemove: Subject) {
+    if (confirm('Are you sure?')) {
+      let newList: Subject[] = [];
+      this.authService.getLoggedUser().person.subjects.forEach(subject => {
+        if (subjectToRemove.id !== subject.id) {
+          newList.push(subject);
+        }
+      });
+      this.authService.getLoggedUser().person.subjects = newList;
+      this.personService.save(this.authService.getLoggedUser().person).subscribe(
+        data => {
+          console.log('Person updated');
+          console.log(data);
+        },
+        error => {
+          console.log('Error occurred:');
+          console.log(error);
+          alert('Error occurred');
+        }
+      );
     }
   }
 }

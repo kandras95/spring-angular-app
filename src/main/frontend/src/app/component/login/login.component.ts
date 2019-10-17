@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         console.log('login failed, error: ' + error.error);
+        alert("Login failed");
         this.authService.refreshAuthenticatedUser();
       }
     );

@@ -30,7 +30,7 @@ public class PersonController {
         }
     }
 
-    @GetMapping("persons/{id}")
+    @GetMapping("/persons/{id}")
     public Object findById(@PathVariable Integer id) {
         Optional<Person> byId = personService.findById(id);
         if (byId.isPresent()) {
@@ -40,7 +40,7 @@ public class PersonController {
         }
     }
 
-    @DeleteMapping("persons/{id}/delete")
+    @DeleteMapping("/persons/{id}/delete")
     public String delete(@PathVariable Integer id) {
         Optional<Person> byId = personService.findById(id);
         if (byId.isPresent()) {
@@ -52,8 +52,7 @@ public class PersonController {
     }
 
     @PostMapping("/persons")
-    public String save(@RequestBody Person person) {
-        Person saved = personService.save(person);
-        return "Person saved, id: " + saved.getId();
+    public Person save(@RequestBody Person person) {
+        return personService.save(person);
     }
 }

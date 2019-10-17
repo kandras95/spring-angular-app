@@ -25,7 +25,7 @@ public class SubjectController {
         return subjectService.findAll();
     }
 
-    @GetMapping("subjects/{id}")
+    @GetMapping("/subjects/{id}")
     public Object findById(@PathVariable Integer id) {
         Optional<Subject> byId = subjectService.findById(id);
         if (byId.isPresent()) {
@@ -35,7 +35,7 @@ public class SubjectController {
         }
     }
 
-    @GetMapping("subjects/{id}/persons")
+    @GetMapping("/subjects/{id}/persons")
     public Object findPersonsById(@PathVariable Integer id) {
         Optional<Subject> byId = subjectService.findById(id);
         if (byId.isPresent()) {
@@ -45,7 +45,7 @@ public class SubjectController {
         }
     }
 
-    @DeleteMapping("subjects/{id}/delete")
+    @DeleteMapping("/subjects/{id}/delete")
     public String delete(@PathVariable Integer id) {
         Optional<Subject> byId = subjectService.findById(id);
         if (byId.isPresent()) {

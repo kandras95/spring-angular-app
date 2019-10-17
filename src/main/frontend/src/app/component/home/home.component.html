@@ -6,6 +6,12 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let subject of getSubjects()">
       {{subject.name}} - {{ subject.description}}
+      <div class="float-right">
+        <button type="button" class="btn btn-danger"
+                (click)="removeSubjectFromPerson(subject)">
+          Remove
+        </button>
+      </div>
     </li>
   </ul>
 </div>

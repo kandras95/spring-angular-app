@@ -5,6 +5,8 @@
     <th scope="col">Name</th>
     <th scope="col">Code</th>
     <th scope="col">Description</th>
+    <th scope="col">Number of students</th>
+    <th scope="col">Options</th>
   </tr>
   </thead>
   <tbody>
@@ -13,6 +15,15 @@
     <td>{{subject.name}}</td>
     <td>{{subject.code}}</td>
     <td>{{subject.description}}</td>
+    <td>{{subject.personSize}}</td>
+    <td>
+      <button type="button" class="btn btn-success btn-sm"
+              *ngIf="authService.isUserInRole('ROLE_STUDENT')"
+              [disabled]="isSubjectConnectedToPerson(subject)"
+              (click)="addSubjectToPerson(subject)">
+        Add
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>

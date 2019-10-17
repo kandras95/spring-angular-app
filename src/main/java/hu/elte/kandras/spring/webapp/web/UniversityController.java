@@ -25,7 +25,7 @@ public class UniversityController {
         return universityService.findAll();
     }
 
-    @GetMapping("universities/{id}")
+    @GetMapping("/universities/{id}")
     public Object findById(@PathVariable Integer id) {
         Optional<University> byId = universityService.findById(id);
         if (byId.isPresent()) {
@@ -35,7 +35,7 @@ public class UniversityController {
         }
     }
 
-    @GetMapping("universities/{id}/subjects")
+    @GetMapping("/universities/{id}/subjects")
     public Object findSubjectsById(@PathVariable Integer id) {
         Optional<University> byId = universityService.findById(id);
         if (byId.isPresent()) {
@@ -45,7 +45,7 @@ public class UniversityController {
         }
     }
 
-    @DeleteMapping("universities/{id}/delete")
+    @DeleteMapping("/universities/{id}/delete")
     public String delete(@PathVariable Integer id) {
         Optional<University> byId = universityService.findById(id);
         if (byId.isPresent()) {

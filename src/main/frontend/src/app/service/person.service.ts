@@ -13,4 +13,8 @@ export class PersonService {
   getPersons() {
     return this.httpClient.get<Person[]>(PERSON_API, {withCredentials: true});
   }
+
+  save(person: Person) {
+    return this.httpClient.post<Person>(PERSON_API, person, {withCredentials: true});
+  }
 }
