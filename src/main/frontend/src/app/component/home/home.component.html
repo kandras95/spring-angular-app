@@ -1,2 +1,12 @@
 <h4>Welcome {{getLoggedUserName()}}!</h4>
 <p>Roles: {{getUserRoles()}}</p>
+<br/>
+<div *ngIf="authService.isUserInRole('ROLE_STUDENT')">
+  <h5>My subjects</h5>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let subject of getSubjects()">
+      {{subject.name}} - {{ subject.description}}
+    </li>
+  </ul>
+</div>
+

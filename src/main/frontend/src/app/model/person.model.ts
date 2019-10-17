@@ -2,7 +2,7 @@ import {Subject} from "./subject.model";
 
 export class Person {
   id: string;
-  name: string;
+  username: string;
   role: string;
   subjects: Subject[]
 }

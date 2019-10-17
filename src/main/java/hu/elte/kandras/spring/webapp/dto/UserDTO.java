@@ -1,27 +1,17 @@
 package hu.elte.kandras.spring.webapp.dto;
 
+import hu.elte.kandras.spring.webapp.model.Person;
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class UserDTO {
 
     private String username;
 
     private List<String> roles = new ArrayList<>();
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public List<String> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<String> roles) {
-        this.roles = roles;
-    }
+    private Person person;
 }

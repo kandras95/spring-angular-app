@@ -18,4 +18,6 @@ public interface PersonService {
     void delete(Person person);
 
     List<Person> findAllByRole(PersonRole role);
+
+    Optional<Person> findByUsername(String username);
 }

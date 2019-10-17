@@ -45,4 +45,9 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> findAllByRole(PersonRole role) {
         return personRepositorySpring.findAllByRole(role);
     }
+
+    @Override
+    public Optional<Person> findByUsername(String username) {
+        return personRepositorySpring.findByUsername(username);
+    }
 }

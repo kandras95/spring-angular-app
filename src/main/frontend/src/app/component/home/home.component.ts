@@ -8,7 +8,7 @@ import {AuthService} from "../../service/auth/auth.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authService: AuthService) {
+  constructor(public authService: AuthService) {
   }
 
   ngOnInit() {
@@ -27,4 +27,12 @@ export class HomeComponent implements OnInit {
     return this.authService.loggedUser != null ? this.authService.loggedUser.roles : '';
   }
 
+  getSubjects() {
+    const user = this.authService.getLoggedUser();
+    if (user != null) {
+      return user.person.subjects;
+    } else {
+      return [];
+    }
+  }
 }

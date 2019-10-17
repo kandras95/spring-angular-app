@@ -43,6 +43,10 @@ export class AuthService {
     return this.loggedUser;
   }
 
+  isUserInRole(role: string): boolean {
+    return this.loggedUser != null && this.loggedUser.roles != null && this.loggedUser.roles.includes(role);
+  }
+
   getAuthenticatedUser(): Observable<any> {
     const URL: string = AUTH_API + '/user-details';
     return this.httpClient.get(URL, {withCredentials: true});

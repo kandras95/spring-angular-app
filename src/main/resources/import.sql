@@ -1,6 +1,6 @@
-INSERT INTO person(name, role) VALUES('Chris', 0);
-INSERT INTO person(name, role) VALUES('Peter', 0);
-INSERT INTO person(name, role) VALUES('Mr. John', 1);
+insert into person(username, role) values('student1', 'STUDENT');
+insert into person(username, role) values('instructor1', 'INSTRUCTOR');
+
 insert into university (name, address, popularity) values ('ELTE', 'Pázmány Péter sétány 1/C', 5);
 insert into university (name, address, popularity) values ('BME', 'Egry József u. 1', 4);
 insert into university (name, address, popularity) values ('Testnevelési egyetem', 'Alkotás u. 44, 1123', 2);

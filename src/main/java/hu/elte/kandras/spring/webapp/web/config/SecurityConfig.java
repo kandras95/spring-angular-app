@@ -90,7 +90,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("instructor1").password("{noop}" + "instructor1").authorities("ROLE_INSTRUCTOR");
         auth
                 .inMemoryAuthentication()
-                .withUser("instructor1").password("{noop}" + "instructor1").authorities("ROLE_INSTRUCTOR");
+                .withUser("instructor2").password("{noop}" + "instructor2").authorities("ROLE_INSTRUCTOR");
     }
 
 

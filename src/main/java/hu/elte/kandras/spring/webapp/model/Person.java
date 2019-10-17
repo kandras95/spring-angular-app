@@ -15,8 +15,10 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
+    @Column(unique = true)
+    private String username;
 
+    @Enumerated(EnumType.STRING)
     private PersonRole role;
 
     @ManyToMany
