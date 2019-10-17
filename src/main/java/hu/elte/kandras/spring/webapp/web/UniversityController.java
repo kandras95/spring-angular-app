@@ -35,6 +35,16 @@ public class UniversityController {
         }
     }
 
+    @GetMapping("universities/{id}/subjects")
+    public Object findSubjectsById(@PathVariable Integer id) {
+        Optional<University> byId = universityService.findById(id);
+        if (byId.isPresent()) {
+            return byId.get().getSubjects();
+        } else {
+            return "Subject with id (" + id + ") was not found";
+        }
+    }
+
     @DeleteMapping("universities/{id}/delete")
     public String delete(@PathVariable Integer id) {
         Optional<University> byId = universityService.findById(id);
