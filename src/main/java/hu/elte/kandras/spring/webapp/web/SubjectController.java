@@ -1,5 +1,6 @@
 package hu.elte.kandras.spring.webapp.web;
 
+import hu.elte.kandras.spring.webapp.model.Person;
 import hu.elte.kandras.spring.webapp.model.Subject;
 import hu.elte.kandras.spring.webapp.service.SubjectService;
 import hu.elte.kandras.spring.webapp.service.SubjectServiceImpl;
@@ -32,6 +33,18 @@ public class SubjectController {
             return byId.get();
         } else {
             return "Subject with id (" + id + ") was not found";
+        }
+    }
+
+    @PutMapping("/subjects/{id}")
+    public Object put(@RequestBody Subject subject, @PathVariable Integer id) {
+        Optional<Subject> byId = subjectService.findById(id);
+        if (byId.isPresent()) {
+            subject.setId(id);
+            subjectService.save(subject);
+            return byId.get();
+        } else {
+            return "Person with id (" + id + ") was not found";
         }
     }
 

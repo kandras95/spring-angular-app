@@ -43,20 +43,22 @@ alkalmazott könyvtárstruktúra bemutatása
 - `GET /login` Bejelentkező oldal
 - `POST /login` Bejelentkezés
 - `GET /logout` Kijelentkezés
-- `GET /register` Regisztrációs oldal
-- `POST /register` Regisztrációs adatok elküldése
 - `GET /persons` Felhasználók kilistázása
 - `POST /persons` Új Felhasználó felvétele
 - `GET /persons/:id` Felhasználó adatainak megjelenítése
+- `PUT /persons/:id` Felhasználó módosítása
+- `POST /persons/:id/subjects` Tantárgy felvétele felhasználóhoz
 - `DELETE /persons/:id/delete` Felhasználó törlése
 - `GET /subjects` Tantárgyak kilistázása
 - `POST /subjects` Új tantárgy felvétele
 - `GET /subjects/:id` Tantárgy adatainak megjelenítése
+- `PUT /subjects/:id` Tantárgy módosítása
 - `GET /subjects/:id/persons` Tantárgyhoz tartózó felhasználók kilistázása
 - `DELETE /subjects/:id/delete` Tantárgy törlése
 - `GET /universities` Egyetemek kilistázása
 - `POST /universities` Új egyetem felvétele
 - `GET /universities/:id` Egyetem adatainak megjelenítése
+- `PUT /universities/:id` Egyetem módosítása
 - `GET /universities/:id/subjects` Egyetemhez tartózó tárgyak kilistázása
 - `DELETE /universities/:id/delete` Egyetem törlése
 
