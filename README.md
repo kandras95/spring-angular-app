@@ -3,7 +3,7 @@ A neptun miniatűr változata spring backend-el és angular frontend-el megvaló
 
 ## Követelmények
 ### Funkcionális követelmények
-- regisztráció
+Közös:
 - bejelentkezés
 
 Tanulóként:
@@ -15,9 +15,6 @@ Tanárként:
 - szeretnék új tárgyat rögzíteni.
 - szeretnék meglévő, hozzám tartozó tárgyat módosítani.
 - szeretnék tárgyat törölni (csak akkor lehetséges, ha egy tanuló se vette fel, és az adott tanárhoz tartozik).
-
-Adminként:
-- szeretném bármely tárgy adatait módosítani
 - szeretném a felhasználókat kilistázni/törölni/módosítani.
 
 ### Nem funkcionális követelmények
@@ -28,8 +25,7 @@ Adminként:
 
 ### Szerepkörök
 - Tanuló: hozzáfér a tantárgyak listájához, tantárgyat felvenni és leadni tud a meglévők közül.
-- Tanár: a tantárgyak listájában a hozzá tartozó tárgyakat tudja módosítani/törölni, illetve újakat felvenni
-- Admin: felhasználók/tárgyak törlése/módosítása
+- Tanár: a tantárgyak listájában a hozzá tartozó tárgyakat tudja módosítani/törölni, illetve a felhasználókat módosítani/törölni
 
 ## Tervezés
 
