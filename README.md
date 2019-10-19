@@ -33,7 +33,7 @@ Tanárként:
 fejlesztői környezet bemutatása, beállítása, használt technológiák...
 
 ### Adatbázis terv
-UML...
+![](https://i.ibb.co/LZY5StC/image.png "UML")
 
 ### Könyvtárstruktúra
 alkalmazott könyvtárstruktúra bemutatása
