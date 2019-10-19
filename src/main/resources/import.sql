@@ -1,5 +1,7 @@
-insert into person(username, role) values('student1', 'STUDENT');
-insert into person(username, role) values('instructor1', 'INSTRUCTOR');
+insert into person(username, name, role) values('student1', 'Kis János', 'STUDENT');
+insert into person(username, name, role) values('student2', 'Kis Márk', 'STUDENT');
+insert into person(username, name, role) values('student3', 'Kis Edit', 'STUDENT');
+insert into person(username, name, role) values('instructor1', 'Nagy Péter', 'INSTRUCTOR');
 
 insert into university (name, address, popularity) values ('ELTE', 'Pázmány Péter sétány 1/C', 5);
 insert into university (name, address, popularity) values ('BME', 'Egry József u. 1', 4);
@@ -12,3 +14,8 @@ insert into subject (name, code, description, university_id) values ('Analízis 
 insert into subject (name, code, description, university_id) values ('Tenisz', 'TF01', 'Kezdő tenisz',3);
 
 insert into person_subjects (persons_id, subjects_id) values (1, 1);
+insert into person_subjects (persons_id, subjects_id) values (1, 2);
+insert into person_subjects (persons_id, subjects_id) values (1, 3);
+insert into person_subjects (persons_id, subjects_id) values (2, 2);
+insert into person_subjects (persons_id, subjects_id) values (2, 4);
+insert into person_subjects (persons_id, subjects_id) values (3, 5);
