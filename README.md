@@ -30,13 +30,13 @@ Tanárként:
 ## Tervezés
 
 ### Fejlesztői környezet
-fejlesztői környezet bemutatása, beállítása, használt technológiák...
+JAVA Spring, hibernate, Maven, H2 Database, Lombok, Spring Security, Angular 8.3.5, Bootstrap
 
 ### Adatbázis terv
 ![](https://i.ibb.co/LZY5StC/image.png "UML")
 
 ### Könyvtárstruktúra
-alkalmazott könyvtárstruktúra bemutatása
+![](https://i.ibb.co/8YvjjzL/struktura.png "Directory structure")
 
 ### Végpontok
 - `GET /` Főoldal
