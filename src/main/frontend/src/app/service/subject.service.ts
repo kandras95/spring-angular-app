@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from "../model/subject.model";
+import {Person} from "../model/person.model";
 
 export const SUBJECT_API = 'http://localhost:8080/api/subjects';
 
@@ -26,5 +27,10 @@ export class SubjectService {
 
   saveSubject(subject: Subject) {
     return this.httpClient.post(SUBJECT_API, subject, {withCredentials: true, responseType: "text"});
+  }
+
+  loadPersonsForSubject(id) {
+    const url = SUBJECT_API + '/' + id + '/persons';
+    return this.httpClient.get<Person[]>(url, {withCredentials: true});
   }
 }

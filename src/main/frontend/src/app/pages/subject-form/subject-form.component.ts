@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Subject} from "../../model/subject.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {SubjectService} from "../../service/subject.service";
+import {Person} from "../../model/person.model";
 
 @Component({
   selector: 'app-subject-form',
@@ -11,6 +12,7 @@ import {SubjectService} from "../../service/subject.service";
 export class SubjectFormComponent implements OnInit {
 
   subject = new Subject();
+  persons: Person[] = [];
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -37,6 +39,7 @@ export class SubjectFormComponent implements OnInit {
     this.subjectService.getSubjectById(id).subscribe(
       data => {
         this.subject = data;
+        this.loadPersonsForSubject();
       },
       error => {
         console.log('Error occured');
@@ -55,6 +58,19 @@ export class SubjectFormComponent implements OnInit {
       (data) => {
         console.log(data);
         this.backToSubjects();
+      },
+      error => {
+        console.log('Error occured');
+        console.log(error);
+      }
+    );
+  }
+
+  loadPersonsForSubject() {
+    this.subjectService.loadPersonsForSubject(this.subject.id).subscribe(
+      (data) => {
+        console.log(data);
+        this.persons = data;
       },
       error => {
         console.log('Error occured');

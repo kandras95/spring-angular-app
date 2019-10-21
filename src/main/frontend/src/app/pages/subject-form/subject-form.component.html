@@ -33,3 +33,11 @@
 &nbsp;
 <input type="button" value="Back" class="btn btn-secondary"
        (click)="backToSubjects()">
+<br/>
+<br/>
+<h5>Students:</h5>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let person of persons">
+    {{person.name}}
+  </li>
+</ul>
