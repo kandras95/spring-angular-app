@@ -59,7 +59,7 @@ public class AuthenticationSuccessEventListener implements ApplicationListener<A
         if (roles.contains("ROLE_INSTRUCTOR")) {
             return PersonRole.INSTRUCTOR;
         } else {
-            return PersonRole.INSTRUCTOR;
+            return PersonRole.STUDENT;
         }
     }
 }

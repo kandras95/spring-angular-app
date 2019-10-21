@@ -58,7 +58,7 @@ public class PersonController {
         }
     }
 
-    @DeleteMapping("/persons/{id}/delete")
+    @DeleteMapping("/persons/{id}")
     public String delete(@PathVariable Integer id) {
         Optional<Person> byId = personService.findById(id);
         if (byId.isPresent()) {

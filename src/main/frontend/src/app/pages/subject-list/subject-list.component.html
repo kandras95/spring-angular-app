@@ -1,3 +1,8 @@
+<div *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">
+  <input type="button" value="New subject" class="btn btn-primary btn-sm" (click)="addSubject()">
+  <br/>
+  <br/>
+</div>
 <table class="table">
   <thead>
   <tr>
@@ -11,7 +16,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let subject of subjects">
-    <th scope="row">{{subject.id}}</th>
+    <th>{{subject.id}}</th>
     <td>{{subject.name}}</td>
     <td>{{subject.code}}</td>
     <td>{{subject.description}}</td>
@@ -22,6 +27,18 @@
               [disabled]="isSubjectConnectedToPerson(subject)"
               (click)="addSubjectToPerson(subject)">
         Add
+      </button>
+      <button type="button" class="btn btn-success btn-sm"
+              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
+              (click)="editSubject(subject.id)">
+        Modify
+      </button>
+      &nbsp;
+      <button type="button" class="btn btn-danger btn-sm"
+              [disabled]="subject.personSize > 0"
+              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
+              (click)="removeSubject(subject.id)">
+        Remove
       </button>
     </td>
   </tr>

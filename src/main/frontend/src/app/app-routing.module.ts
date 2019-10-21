@@ -5,6 +5,7 @@ import {PersonListComponent} from "./pages/person-list/person-list.component";
 import {LoginComponent} from "./component/login/login.component";
 import {LoggedInGuard} from "./service/auth/logged-in-guard.service";
 import {SubjectListComponent} from "./pages/subject-list/subject-list.component";
+import {SubjectFormComponent} from "./pages/subject-form/subject-form.component";
 
 
 const routes: Routes = [
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'subjects/subject-form/:id', component: SubjectFormComponent
   }
 ];
 

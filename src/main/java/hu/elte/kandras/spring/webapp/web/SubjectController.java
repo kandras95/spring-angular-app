@@ -1,6 +1,5 @@
 package hu.elte.kandras.spring.webapp.web;
 
-import hu.elte.kandras.spring.webapp.model.Person;
 import hu.elte.kandras.spring.webapp.model.Subject;
 import hu.elte.kandras.spring.webapp.service.SubjectService;
 import hu.elte.kandras.spring.webapp.service.SubjectServiceImpl;
@@ -58,20 +57,19 @@ public class SubjectController {
         }
     }
 
-    @DeleteMapping("/subjects/{id}/delete")
+    @DeleteMapping("/subjects/{id}")
     public String delete(@PathVariable Integer id) {
         Optional<Subject> byId = subjectService.findById(id);
         if (byId.isPresent()) {
             subjectService.delete(byId.get());
-            return "P deleted";
+            return "Subject deleted";
         } else {
             return "Subject with id (" + id + ") was not found";
         }
     }
 
     @PostMapping("/subjects")
-    public String save(@RequestBody Subject subject) {
-        Subject saved = subjectService.save(subject);
-        return "Subject saved, id: " + saved.getId();
+    public Subject save(@RequestBody Subject subject) {
+        return subjectService.save(subject);
     }
 }

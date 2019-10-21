@@ -14,6 +14,7 @@ import {LoginComponent} from "./component/login/login.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SubjectListComponent} from './pages/subject-list/subject-list.component';
 import {SubjectService} from "./service/subject.service";
+import {SubjectFormComponent} from "./pages/subject-form/subject-form.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {SubjectService} from "./service/subject.service";
     LoginComponent,
     PersonListComponent,
     SubjectListComponent,
+    SubjectFormComponent,
     HeaderComponent,
     HomeComponent
   ],

@@ -3,6 +3,7 @@ import {SubjectService} from "../../service/subject.service";
 import {Subject} from "../../model/subject.model";
 import {AuthService} from "../../service/auth/auth.service";
 import {PersonService} from "../../service/person.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-subject-list',
@@ -15,7 +16,8 @@ export class SubjectListComponent implements OnInit {
 
   constructor(private subjectService: SubjectService,
               private personService: PersonService,
-              public authService: AuthService) {
+              public authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -60,5 +62,29 @@ export class SubjectListComponent implements OnInit {
       }
     });
     return addedAlready;
+  }
+
+  editSubject(id: string) {
+    this.router.navigate(['subjects/subject-form/' + id]);
+  }
+
+  removeSubject(id: string) {
+    if (confirm('Are you sure?')) {
+      this.subjectService.deleteSubject(id).subscribe(
+        (data) => {
+          console.log(data);
+          this.initSubjects();
+        },
+        error => {
+          console.log('Error occurred');
+          console.log(error);
+          alert('Error occurred');
+        }
+      );
+    }
+  }
+
+  addSubject() {
+    this.router.navigate(['subjects/subject-form/new']);
   }
 }
