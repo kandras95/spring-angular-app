@@ -15,6 +15,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SubjectListComponent} from './pages/subject-list/subject-list.component';
 import {SubjectService} from "./service/subject.service";
 import {SubjectFormComponent} from "./pages/subject-form/subject-form.component";
+import {UniversityListComponent} from './pages/university-list/university-list.component';
+import {UniversityService} from "./service/university.service";
+import {UniversityFormComponent} from "./pages/university-form/university-form.component";
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import {SubjectFormComponent} from "./pages/subject-form/subject-form.component"
     PersonListComponent,
     SubjectListComponent,
     SubjectFormComponent,
+    UniversityListComponent,
+    UniversityFormComponent,
     HeaderComponent,
     HomeComponent
   ],
@@ -36,6 +41,7 @@ import {SubjectFormComponent} from "./pages/subject-form/subject-form.component"
   providers: [
     PersonService,
     SubjectService,
+    UniversityService,
     AuthService,
     LoggedInGuard
   ],

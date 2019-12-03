@@ -1,0 +1,38 @@
+<div *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">
+  <input type="button" value="New university" class="btn btn-primary btn-sm" (click)="addUniversity()">
+  <br/>
+  <br/>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Popularity</th>
+    <th scope="col" *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">Options</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let university of universities">
+    <th>{{university.id}}</th>
+    <td>{{university.name}}</td>
+    <td>{{university.address}}</td>
+    <td>{{university.popularity}}</td>
+    <td>
+      <button type="button" class="btn btn-success btn-sm"
+              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
+              (click)="editUniversity(university.id)">
+        Modify
+      </button>
+    </td>
+    <td>      &nbsp;
+      <button type="button" class="btn btn-danger btn-sm"
+              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
+              (click)="removeUniversity(university.id)">
+        Remove
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
