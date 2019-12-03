@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {PersonService} from "../../service/person.service";
 import {Person} from "../../model/person.model";
+import {AuthService} from "../../service/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-person-list',
@@ -11,7 +13,7 @@ export class PersonListComponent implements OnInit {
 
   persons: Person[] = [];
 
-  constructor(private personService: PersonService) {
+  constructor(private personService: PersonService, private router: Router, public authService: AuthService) {
   }
 
   ngOnInit() {
@@ -29,4 +31,8 @@ export class PersonListComponent implements OnInit {
       }
     )
   }
+
+  editPerson(id: string) {
+      this.router.navigate(['persons/person-form/' + id]);
+    }
 }

@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {PersonListComponent} from './pages/person-list/person-list.component';
+import {PersonFormComponent} from './pages/person-form/person-form.component';
 import {PersonService} from "./service/person.service";
 import {HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from './component/header/header.component';
@@ -24,6 +25,7 @@ import {UniversityFormComponent} from "./pages/university-form/university-form.c
     AppComponent,
     LoginComponent,
     PersonListComponent,
+    PersonFormComponent,
     SubjectListComponent,
     SubjectFormComponent,
     UniversityListComponent,

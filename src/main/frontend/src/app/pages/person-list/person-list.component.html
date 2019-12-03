@@ -6,6 +6,7 @@
     <th scope="col">Name</th>
     <th scope="col">Role</th>
     <th scope="col">Number of subjects</th>
+    <th scope="col" *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">Options</th>
   </tr>
   </thead>
   <tbody>
@@ -15,6 +16,12 @@
     <td>{{person.name}}</td>
     <td>{{person.role}}</td>
     <td>{{person.subjects.length}}</td>
+    <td *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">
+      <button type="button" class="btn btn-success btn-sm"
+              (click)="editPerson(person.id)">
+        Modify
+      </button>
+    </td>
   </tr>
   </tbody>
 </table>

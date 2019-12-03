@@ -19,17 +19,12 @@
     <td>{{university.name}}</td>
     <td>{{university.address}}</td>
     <td>{{university.popularity}}</td>
-    <td>
-      <button type="button" class="btn btn-success btn-sm"
-              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
-              (click)="editUniversity(university.id)">
+    <td *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')">
+      <button type="button" class="btn btn-success btn-sm" (click)="editUniversity(university.id)">
         Modify
       </button>
-    </td>
-    <td>      &nbsp;
-      <button type="button" class="btn btn-danger btn-sm"
-              *ngIf="authService.isUserInRole('ROLE_INSTRUCTOR')"
-              (click)="removeUniversity(university.id)">
+      &nbsp;
+      <button type="button" class="btn btn-danger btn-sm" (click)="removeUniversity(university.id)">
         Remove
       </button>
     </td>

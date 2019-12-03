@@ -1,0 +1,34 @@
+<h4 *ngIf="person.id == null">
+  New person
+</h4>
+<h4 *ngIf="person.id != null">
+  Modify person
+</h4>
+<br/>
+<form>
+  <div class="form-group row">
+    <label for="username" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-4">
+      <input [(ngModel)]="person.username" type="text" class="form-control" id="username" name="username" title="username">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-4">
+      <input [(ngModel)]="person.name" type="text" class="form-control" id="name" name="name" title="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="role" class="col-sm-2 col-form-label">Person role</label>
+    <div class="col-sm-4">
+      <input [(ngModel)]="person.role" class="form-control" id="role" name="role" title="role">
+    </div>
+  </div>
+</form>
+
+<input type="button" value="Save" class="btn btn-primary"
+       (click)="savePerson()">
+&nbsp;
+<input type="button" value="Back" class="btn btn-secondary"
+       (click)="backToPersons()">
+<br/>

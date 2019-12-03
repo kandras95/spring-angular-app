@@ -14,6 +14,11 @@ export class PersonService {
     return this.httpClient.get<Person[]>(PERSON_API, {withCredentials: true});
   }
 
+  getPersonById(id: string) {
+    const url = PERSON_API + '/' + id;
+    return this.httpClient.get<Person>(url, {withCredentials: true});
+  }
+
   save(person: Person) {
     return this.httpClient.post<Person>(PERSON_API, person, {withCredentials: true});
   }

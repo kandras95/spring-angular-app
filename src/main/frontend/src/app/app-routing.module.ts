@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./component/home/home.component";
 import {PersonListComponent} from "./pages/person-list/person-list.component";
+import {PersonFormComponent} from "./pages/person-form/person-form.component";
 import {LoginComponent} from "./component/login/login.component";
 import {LoggedInGuard} from "./service/auth/logged-in-guard.service";
 import {SubjectListComponent} from "./pages/subject-list/subject-list.component";
@@ -32,6 +33,9 @@ const routes: Routes = [
   },
   {
     path: 'login', component: LoginComponent
+  },
+  {
+    path: 'persons/person-form/:id', component: PersonFormComponent
   },
   {
     path: 'subjects/subject-form/:id', component: SubjectFormComponent
