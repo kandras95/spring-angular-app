@@ -95,5 +95,48 @@ Tantárgyak listáján, az 'Add' gomb kattintására felvehetjük az adott tant�
 
 Folyamat:
 1. onClick: addSubjectToPerson(subject) metódus hívás
-2. a modellben az adott student tantárgy listájába pusholódik a tantárgy
-3.
+2. a modellben az adott student tantárgy listájába pusholódik a tantárgy: person.subjects.push(subject)
+3. backend service hívás: personService.save(person)
+4. sikeres service hívás esetén a tantárgyak listája frissül
+5. visszajelzés: az 'Add' gomb elhalványul, disabled állapotba kerül
+
+![](https://i.ibb.co/9VmX1Sw/image.png "Add button")
+
+## Felhasználói dokumentáció
+- Bejelentkezés felhasználónév és jelszó segítségével:
+
+![](https://i.ibb.co/VTpXTXR/image.png "login")
+- Navigációs sáv: tartalmazza az egyes menüpontokat és a kijelentkezés gombot.
+
+![](https://i.ibb.co/bQcv4rK/image.png "login")
+
+- Főoldal: Tanulóként megjelenik a felvett tantárgyainak a listája. A lista elemek a jobb oldali 'Remove' gombbal eltávolíthatóak.
+
+![](https://i.ibb.co/Cm0GWSC/image.png "login")
+
+- Tantárgyak: 
+Tanulóként kilistázva látjuk az elérhető tantárgyakat és fel is vehetjük őket a jobb oldali 'Add' gombbal
+
+![](https://i.ibb.co/DDCCkHN/image.png "login")
+
+Tanárként felvehetünk új tantárgyat a lista felett található 'New subject' gombbal. Az alábbi formra navigál az alkalmazás:
+
+![](https://i.ibb.co/cbNMZ3F/image.png "login")
+
+Tanárként kilistázva látjuk az elérhető tantárgyakat és módosíthatjuk őket a jobb oldali 'Options' gombokkal
+
+![](https://i.ibb.co/wMBpHnQ/image.png "login")
+
+Tantárgy módosítás: 'Modify' gomb hatására az alkalmazás egy szerkeszthető formra navigál
+
+![](https://i.ibb.co/N9C8vqP/image.png "login")
+
+A form alatt látható azon tanulók listája, akik felvették az adott tantárgyat.
+Mentésre frissül a tárgy. A vissza gomb visszanavigál a tantárgyak listájához.
+
+Tantárgy törlés: 'Remove' gomb hatására a tárgy törlődik
+
+- Felhasználók: a 'Persons' menüt megnyitva kilistázódnak az alkalmazásban szereplő felhasználók
+Tanárként módosíthatóak is a 'Modify' gombbal:
+
+![](https://i.ibb.co/kg7Vw26/image.png "login")
