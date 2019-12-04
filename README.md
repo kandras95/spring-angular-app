@@ -29,14 +29,8 @@ Tanárként:
 
 ## Tervezés
 
-### Fejlesztői környezet
-JAVA Spring, hibernate, Maven, H2 Database, Lombok, Spring Security, Angular 8.3.5, Bootstrap
-
 ### Adatbázis terv
 ![](https://i.ibb.co/LZY5StC/image.png "UML")
-
-### Könyvtárstruktúra
-![](https://i.ibb.co/8YvjjzL/struktura.png "Directory structure")
 
 ### Végpontok
 - `GET /` Főoldal
@@ -64,3 +58,42 @@ JAVA Spring, hibernate, Maven, H2 Database, Lombok, Spring Security, Angular 8.3
 
 ### Szekvenciadiagram
 1 db végpont működésének leírása, mi történik, milyen lépések követik egymást (szekvenciadiagram)
+
+## Implementáció
+
+### Használati eset diagram
+![](https://i.ibb.co/XVnTKR8/hasznalati-eset-diagram.png "Használati eset diagram")
+
+### Fejlesztői környezet
+Használt technológiák: JAVA Spring, hibernate, Maven, H2 Database, Lombok, Spring Security, Angular 8.3.5, Bootstrap
+- Backend: IntelliJ IDEA / Netbeans
+- Frontend: Visual Studio Code
+
+### Könyvtárstruktúra
+Backend:
+
+![](https://i.ibb.co/8YvjjzL/struktura.png "Backend directory structure")
+
+Frontend:
+
+![](https://i.ibb.co/18s9Qcg/image.png "Frontend directory structure")
+
+### Kliensoldali szolgáltatások
+- Ajax hívások: az alkalmazás az oldal újratöltése nélkül kommunikál a szerverrel
+- Bejelentkezés: form kitöltése után validáció, sikertelen bejelentkezés esetén hibaüzenet
+- Saját tantárgyak betöltése főoldalon (Student): dinamikusan frissülő lista lista
+- Intuitív működés: Tantárgyak/egyetemek törlése, módosítása, felvétele gombnyomásra
+- Kijelentkezés
+
+### Kapcsolat
+Az alkalmazás Ajax REST API hívásokkal kommunikál a backend-del.
+
+### Egy funkció bemutatása: Tantárgy felvétel
+Tantárgyak listáján, az 'Add' gomb kattintására felvehetjük az adott tantárgyat:
+
+![](https://i.ibb.co/JsmBgB2/Untitled.png "Add subject")
+
+Folyamat:
+1. onClick: addSubjectToPerson(subject) metódus hívás
+2. a modellben az adott student tantárgy listájába pusholódik a tantárgy
+3.
