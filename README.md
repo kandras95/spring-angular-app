@@ -103,18 +103,18 @@ Folyamat:
 ![](https://i.ibb.co/9VmX1Sw/image.png "Add button")
 
 ## Felhasználói dokumentáció
-- Bejelentkezés felhasználónév és jelszó segítségével:
+- **Bejelentkezés** felhasználónév és jelszó segítségével:
 
 ![](https://i.ibb.co/VTpXTXR/image.png "login")
-- Navigációs sáv: tartalmazza az egyes menüpontokat és a kijelentkezés gombot.
+- **Navigációs sáv**: tartalmazza az egyes menüpontokat és a kijelentkezés gombot.
 
 ![](https://i.ibb.co/bQcv4rK/image.png "login")
 
-- Főoldal: Tanulóként megjelenik a felvett tantárgyainak a listája. A lista elemek a jobb oldali 'Remove' gombbal eltávolíthatóak.
+- **Főoldal**: Tanulóként megjelenik a felvett tantárgyainak a listája. A lista elemek a jobb oldali 'Remove' gombbal eltávolíthatóak.
 
 ![](https://i.ibb.co/Cm0GWSC/image.png "login")
 
-- Tantárgyak: 
+- **Tantárgyak**: 
 Tanulóként kilistázva látjuk az elérhető tantárgyakat és fel is vehetjük őket a jobb oldali 'Add' gombbal
 
 ![](https://i.ibb.co/DDCCkHN/image.png "login")
@@ -136,7 +136,14 @@ Mentésre frissül a tárgy. A vissza gomb visszanavigál a tantárgyak listáj�
 
 Tantárgy törlés: 'Remove' gomb hatására a tárgy törlődik
 
-- Felhasználók: a 'Persons' menüt megnyitva kilistázódnak az alkalmazásban szereplő felhasználók
+- **Felhasználók**: a 'Persons' menüt megnyitva kilistázódnak az alkalmazásban szereplő felhasználók
 Tanárként módosíthatóak is a 'Modify' gombbal:
 
 ![](https://i.ibb.co/kg7Vw26/image.png "login")
+![](https://i.ibb.co/ssVsbt2/image.png "login")
+
+- **Egyetemek**: a 'Universites' menüt megnyitva kilistázódnak az egyetemek
+Tanárként lehet módosítani, törölni és létrehozni is
+![](https://i.ibb.co/h1YXP92/image.png "login")
+![](https://i.ibb.co/7grJ60Q/image.png "login")
+
